@@ -87,7 +87,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/loginBtn"
-            android:text="Sign UP"
+            android:text="Login"
             android:textColor="@color/black"
             android:backgroundTint="@color/dpink"
             android:outlineAmbientShadowColor="@color/black"

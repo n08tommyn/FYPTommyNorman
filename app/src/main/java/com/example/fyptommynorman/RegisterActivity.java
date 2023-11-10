@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -70,6 +71,11 @@ public class RegisterActivity extends AppCompatActivity {
                     Toast.makeText(RegisterActivity.this, "Please enter your email", Toast.LENGTH_SHORT).show();
                     etemail.setError("Your email is required to register an account");
                     etemail.requestFocus();
+                }else if (!Patterns.EMAIL_ADDRESS.matcher(userEmail).matches()){
+                        Toast.makeText(RegisterActivity.this, "Please enter a valid email", Toast.LENGTH_SHORT).show();
+                        etemail.setError("Please enter a valid email");
+                        etemail.requestFocus();
+
                 } else if (TextUtils.isEmpty(userPword)) {
                     Toast.makeText(RegisterActivity.this, "Please enter a password", Toast.LENGTH_SHORT).show();
                     etpword.setError("A Password is required to register an account");
