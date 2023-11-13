@@ -5,6 +5,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Patterns;
@@ -118,7 +119,7 @@ public class RegisterActivity extends AppCompatActivity {
                     Random random = new Random();
                     int pin = 100000 + random.nextInt(900000);
                     String randomPin = String.valueOf(pin);
-                    Toast.makeText(RegisterActivity.this, "Your new Pin for your group is" + randomPin + " remeber to share it with your group :)", Toast.LENGTH_LONG).show();
+                    Toast.makeText(RegisterActivity.this, "Your new Pin for your group is" + randomPin + " remember to share it with your group :)", Toast.LENGTH_LONG).show();
                     groupPin[0] = randomPin.toString();
                     registerUser(fullName, userEmail, userPword, groupPin[0]);
 
@@ -154,6 +155,9 @@ public class RegisterActivity extends AppCompatActivity {
                                 Toast.makeText(RegisterActivity.this, "Error adding deatils", Toast.LENGTH_LONG).show();
                                 FirebaseUser firebaseuser = auth.getCurrentUser();
 
+                            } else {
+                                Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+                                startActivity(intent);
                             }
 
 

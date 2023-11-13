@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Message"
+        android:icon="@drawable/baseline_message_24"
+        android:id="@+id/message"/>
+    <item android:title="Expenses"
+        android:icon="@drawable/baseline_currency_pound_24"
+        android:id="@+id/expenses"/>
+    <item android:title="home"
+        android:icon="@drawable/baseline_home_24"
+        android:id="@+id/home"/>
+    <item android:title="tips"
+        android:icon="@drawable/baseline_tips_and_updates_24"
+        android:id="@+id/tips"/>
+    <item android:title="calander"
+        android:icon="@drawable/baseline_calendar_month_24"
+        android:id="@+id/calender"/>
+</menu>
