@@ -141,7 +141,7 @@ public class RegisterActivity extends AppCompatActivity {
                     Toast.makeText(RegisterActivity.this, "User Succsesfully Registeerd", Toast.LENGTH_LONG).show();
                     FirebaseUser firebaseuser = auth.getCurrentUser();
 
-
+//test git
                     //add info to database about user
 
                     readWriteData writeUserDetails = new readWriteData(fullName, groupPin);
