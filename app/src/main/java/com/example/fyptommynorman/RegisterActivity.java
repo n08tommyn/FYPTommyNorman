@@ -105,6 +105,8 @@ public class RegisterActivity extends AppCompatActivity {
                             groupPin[0] = userInput.getText().toString();
                             Toast.makeText(RegisterActivity.this, groupPin[0], Toast.LENGTH_SHORT).show();
                             registerUser(fullName, userEmail, userPword, groupPin[0]);
+                            Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+                            startActivity(intent);
 
                         }
                     });
@@ -122,6 +124,8 @@ public class RegisterActivity extends AppCompatActivity {
                     Toast.makeText(RegisterActivity.this, "Your new Pin for your group is" + randomPin + " remember to share it with your group :)", Toast.LENGTH_LONG).show();
                     groupPin[0] = randomPin.toString();
                     registerUser(fullName, userEmail, userPword, groupPin[0]);
+                    Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+                    startActivity(intent);
 
                 }
             }
