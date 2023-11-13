@@ -7,10 +7,16 @@
     tools:context=".BottomNavBar">
 
     <FrameLayout
+<<<<<<< HEAD
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavView"
+=======
         android:id="@+id/frameLayout"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@+id/navigationBar"
+>>>>>>> master
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -18,6 +24,18 @@
     </FrameLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
+<<<<<<< HEAD
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/bottomNavView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottomnavmenu">
+
+
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+=======
         android:id="@+id/navigationBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -26,4 +44,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/navbar"/>
+>>>>>>> master
 </androidx.constraintlayout.widget.ConstraintLayout>

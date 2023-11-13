@@ -4,58 +4,52 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import android.widget.FrameLayout;
+
+import android.os.Bundle;
 
 import com.example.fyptommynorman.databinding.ActivityBottomNavBarBinding;
 import com.example.fyptommynorman.databinding.ActivityMainBinding;
-import android.os.Bundle;
-import android.view.View;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-
 
 public class BottomNavBar extends AppCompatActivity {
-    private ActivityBottomNavBarBinding binding;
 
+    ActivityBottomNavBarBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityBottomNavBarBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        replaceFrag(new HomeFragment());
-        binding.navigationBar.setOnItemSelectedListener(item -> {
+        replaceFragment(new HomeFragment());
+        binding.bottomNavView.setOnItemSelectedListener(item -> {
+            switch (item.getItemId()){
 
-            switch (item.getItemId()) {
-                case R.id.homeIc:
-                    replaceFrag(new HomeFragment());
+                case R.id.home:
+                    replaceFragment(new HomeFragment());
                     break;
-                case R.id.moneyIc:
-                    replaceFrag(new MoneyFragment());
+                case R.id.calender:
+                    replaceFragment(new CalenderFragment());
                     break;
-                case R.id.tipsIc:
-                    replaceFrag(new TipsFragment());
+                case R.id.expenses:
+                    replaceFragment(new ExpensesFragment());
                     break;
-
-                case R.id.billsIc:
-                    replaceFrag(new BillsFragment());
+                case R.id.message:
+                    replaceFragment(new MessageFragment());
                     break;
-
-                case R.id.messageIc:
-                    replaceFrag(new MessageFragment());
+                case R.id.tips:
+                    replaceFragment(new TipsFragment());
                     break;
 
             }
             return true;
-
         });
     }
 
-    private void replaceFrag(Fragment fragment){
+    private void replaceFragment(Fragment fragment){
 
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.frameLayout, fragment);
+        fragmentTransaction.replace(R.id.bottomNavView, fragment);
         fragmentTransaction.commit();
     }
-
-
 }
