@@ -24,11 +24,22 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    buildFeatures{
+        viewBinding true
+        dataBinding true
+
+    }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    buildFeatures {
+        viewBinding true;
+    }
 }
+
+
 
 dependencies {
 
@@ -45,6 +56,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-messaging:23.3.1'
     implementation 'com.google.firebase:firebase-database-collection:18.0.1'
     implementation 'com.google.firebase:firebase-firestore:24.9.1'
+
 
 
 
